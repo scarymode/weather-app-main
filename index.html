@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+  
+  <title>Frontend Mentor | Weather app</title>
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="head">
+    <img src="/assets/images/logo.svg" alt="">
+    <div class="setting">
+      <button id="setting">
+        <img src="/assets/images/icon-units.svg" alt="setting">
+        Units
+        <img src="/assets/images/icon-dropdown.svg" alt="">
+      </button>
+      <div class="setting_content">
+        <button id="switch">Switch to Imperial</button>
+        <div>
+        <div class="separator"></div>
+          <p class="setting_title">Temperature</p>
+          <div class="units">
+            <button class="temp_button">
+              Celsius (°C)
+              <img class="check" src="/assets/images/icon-checkmark.svg">
+            </button>
+            <button class="temp_button">
+              Fahrenheit (°F)
+              <img class="check" src="/assets/images/icon-checkmark.svg">
+            </button>
+          </div>
+        </div>
+        <div class="separator"></div>
+        <div>
+          <p class="setting_title">Wind speed</p>
+          <div class="units">
+            <button class="speed_button">
+              km/h
+              <img class="check" src="/assets/images/icon-checkmark.svg">
+            </button>
+            <button class="speed_button">
+              mph
+              <img class="check" src="/assets/images/icon-checkmark.svg">
+            </button>
+          </div>
+        </div>
+        <div class="separator"></div>
+        <div>
+          <p class="setting_title">Precipitation</p>
+          <div class="units">
+            <button class="prec_button">
+              Millimeters (mm)
+              <img class="check" src="/assets/images/icon-checkmark.svg">
+            </button>
+            <button class="prec_button">
+              Inches (in)
+              <img class="check" src="/assets/images/icon-checkmark.svg">
+            </button>
+          </div>            
+        </div>
+      </div>      
+    </div>
+  </div>
+  <div class="title">How's the sky looking today?</div>
+
+  <div class="search">
+    <div class="search_input">
+      <img src="/assets/images/icon-search.svg">
+      <input type="text" id="search" placeholder="Search for a place...">
+    </div>
+    <button>Search</button>
+  </div>
+
+  <div class="content">
+    <div class="content-left">
+      <div class="content-now"></div>
+      <div class="content-detail">
+        <div>
+          <h1>Feels like</h1>
+          <p id="feelsLike">64°</p>
+        </div>
+        <div>
+          <h1>Humidity</h1>
+          <p id="humidity">46%</p>
+        </div>
+        <div>
+          <h1>Wind</h1>
+          <p id="wind">9 mph</p>
+        </div>
+        <div>
+          <h1>Precipitation</h1>
+          <p id="precipitation">0 in</p>
+        </div>
+      </div>
+      <div class="content-daily">
+        Daily forecast
+        <div class="daily"></div>
+      </div>
+    </div>
+    <div class="content-right">
+      <div>
+        Hourly forecast
+        <div class="content-hourly"></div>
+      </div>
+    </div>
+  </div>
+  
+  <div class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge">Frontend Mentor</a>. 
+    Coded by <a href="#">Your Name Here</a>.
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
