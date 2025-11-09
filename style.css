@@ -122,8 +122,7 @@ body {
 .temp_button .check{
     display: none;
 }
-.temp_button.active .check {    
-    background-color: #312f4bff;
+.temp_button.active .check {   
     display: block;    
     align-self: center;
 }
@@ -131,7 +130,6 @@ body {
     display: none;
 }
 .speed_button.active .check {
-    background-color: #312f4bff;
     display: block;    
     align-self: center;
 }
@@ -139,7 +137,6 @@ body {
     display: none;
 }
 .prec_button.active .check {
-    background-color: #312f4bff;
     display: block;    
     align-self: center;
 }
