@@ -15,7 +15,7 @@ settingButton.addEventListener("click", (e) => {
 document.addEventListener("click", (e) => {
   if (!settingContent.contains(e.target) && !settingButton.contains(e.target)) {
     settingContent.style.display = "none";
-  }
+  } 
 });
 
 function makeToggleGroup(buttons, storageKey) {
