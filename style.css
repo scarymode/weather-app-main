@@ -15,7 +15,7 @@ body {
 .head {
     width: 80%;
     justify-self: center;
-    margin: 30px;
+    margin: 3rem;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -27,28 +27,43 @@ body {
     position: relative;
 }
 #setting {
-    background-color: #272541ff;
+    background-color: #272541;
     border: none;
     display: flex;
     flex-direction: row;
-    align-items: center;
-    justify-content: space-around;
+    justify-content: center;
     gap: 6px;
     color: white;
     border-radius: 8px;
     padding: 10px;
-    width: 120px;
-    font-family: Dm_sans;
-    font-size: 18px;
+    min-width: 7rem;
+    max-width: 20vw;
+    font-family: "DM Sans", sans-serif;
+    font-size: 1.5rem;
     font-weight: 500;
+    line-height: 1; /* IMPORTANT : enlève l'espace au-dessus du texte */
     cursor: pointer;
-    text-align: center;
+    transition: background-color 0.2s ease;
 }
-#setting img {
-    align-self: center;
+
+.setting-logo {
+    height: 1.5rem;
+    width: auto;
 }
+
+.setting-dropdown {
+    height: 0.75rem;
+    width: auto;
+    transform: translateY(6px);
+}
+
 #setting:hover {
-    background-color: #312f4bff;
+    background-color: #3a3758;
+}
+
+#setting:focus {
+    outline: 2px solid #5a5780;
+    outline-offset: 2px;
 }
 .setting_content { 
     position: absolute;
@@ -216,11 +231,17 @@ body {
 }
 .content {
     display: grid;
+    flex-wrap: wrap;
     width: 85%;
     height: 100vh;
     grid-template-columns: 7fr 3fr;
     gap: 30px;
     justify-self: center;
+}
+@media (max-width: 1050px) {
+    .content {
+        grid-template-columns: 1fr; /* Une seule colonne sur mobile */
+    }
 }
 .content-left {
     display: flex;
@@ -276,6 +297,8 @@ body {
 .content-right {
     height: 100%;
     width: 100%;
+    min-width: 20rem;
+    flex-wrap: wrap;
 }
 .content-right div {
     border-radius: 20px;
