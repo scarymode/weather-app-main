@@ -1,4 +1,4 @@
-.attribution { font-size: 11px; text-align: center; }
+.attribution { font-size: 11px; text-align: center; color: #ffffff;}
 .attribution a { color: hsl(228, 45%, 44%); }
 
 @font-face {
@@ -41,14 +41,14 @@ body {
     font-family: "DM Sans", sans-serif;
     font-size: 1.5rem;
     font-weight: 500;
-    line-height: 1; /* IMPORTANT : enlève l'espace au-dessus du texte */
     cursor: pointer;
     transition: background-color 0.2s ease;
 }
 
 .setting-logo {
-    height: 1.5rem;
+    height: 1.25rem;
     width: auto;
+    transform: translateY(2px);
 }
 
 .setting-dropdown {
@@ -240,14 +240,14 @@ body {
 }
 @media (max-width: 1050px) {
     .content {
-        grid-template-columns: 1fr; /* Une seule colonne sur mobile */
+        grid-template-columns: 1fr;
     }
 }
 .content-left {
     display: flex;
     flex-direction: column;
     gap: 30px;
-    height: 100%;
+    height: 100vh;
     width: 100%;
 }
 .content-now {
@@ -295,7 +295,7 @@ body {
 }
 
 .content-right {
-    height: 100%;
+    height: 100vh;
     width: 100%;
     min-width: 20rem;
     flex-wrap: wrap;
