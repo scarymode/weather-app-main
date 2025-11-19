@@ -140,3 +140,6 @@ searchButton.addEventListener("click", () => {
       if (flagImg) flagImg.src = "";
     });
 });
+
+let date = new Date().toDateString();
+document.querySelector(".date").textContent = date;
