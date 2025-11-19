@@ -1,4 +1,4 @@
-.attribution { font-size: 11px; text-align: center; color: #ffffff;}
+.attribution { font-size: 11px; text-align: center; }
 .attribution a { color: hsl(228, 45%, 44%); }
 
 @font-face {
@@ -15,7 +15,7 @@ body {
 .head {
     width: 80%;
     justify-self: center;
-    margin: 3rem;
+    margin: 30px;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -27,43 +27,28 @@ body {
     position: relative;
 }
 #setting {
-    background-color: #272541;
+    background-color: #272541ff;
     border: none;
     display: flex;
     flex-direction: row;
-    justify-content: center;
+    align-items: center;
+    justify-content: space-around;
     gap: 6px;
     color: white;
     border-radius: 8px;
     padding: 10px;
-    min-width: 7rem;
-    max-width: 20vw;
-    font-family: "DM Sans", sans-serif;
-    font-size: 1.5rem;
+    width: 120px;
+    font-family: Dm_sans;
+    font-size: 18px;
     font-weight: 500;
     cursor: pointer;
-    transition: background-color 0.2s ease;
+    text-align: center;
 }
-
-.setting-logo {
-    height: 1.25rem;
-    width: auto;
-    transform: translateY(2px);
+#setting img {
+    align-self: center;
 }
-
-.setting-dropdown {
-    height: 0.75rem;
-    width: auto;
-    transform: translateY(6px);
-}
-
 #setting:hover {
-    background-color: #3a3758;
-}
-
-#setting:focus {
-    outline: 2px solid #5a5780;
-    outline-offset: 2px;
+    background-color: #312f4bff;
 }
 .setting_content { 
     position: absolute;
@@ -231,23 +216,17 @@ body {
 }
 .content {
     display: grid;
-    flex-wrap: wrap;
     width: 85%;
     height: 100vh;
     grid-template-columns: 7fr 3fr;
     gap: 30px;
     justify-self: center;
 }
-@media (max-width: 1050px) {
-    .content {
-        grid-template-columns: 1fr;
-    }
-}
 .content-left {
     display: flex;
     flex-direction: column;
     gap: 30px;
-    height: 100vh;
+    height: 100%;
     width: 100%;
 }
 .content-now {
@@ -295,10 +274,8 @@ body {
 }
 
 .content-right {
-    height: 100vh;
+    height: 100%;
     width: 100%;
-    min-width: 20rem;
-    flex-wrap: wrap;
 }
 .content-right div {
     border-radius: 20px;
