@@ -262,21 +262,32 @@ body {
     display: flex;
     flex-direction: row;
     align-items: center;
+    justify-content: space-between;
+    overflow: hidden;
+}
+.content-now div {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+    margin-left: 30px;
 }
 .city_selected {
     font-family: Dm_sans;
-    font-size: 18px;
+    font-size: 25px;
     font-weight: 500;
     color: #ffffff;
 }
 .flag {
-    height: 20px;
+    height: 40px;
 }
 .temp_actual {
     font-family: Dm_sans;
-    font-size: 40px;
+    font-size: 150px;
+    padding: auto 0;
     font-weight: 500;
     color: #ffffff;
+    margin-right: 30px;
 }
 .content-detail {
     flex: 2;
