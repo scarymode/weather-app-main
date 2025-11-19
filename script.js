@@ -70,3 +70,73 @@ switchUnit.addEventListener("click", () => {
     switchUnit.textContent = "Switch to Metric";
   }
 });
+
+const searchInput = document.querySelector("input");
+const searchButton = document.querySelector(".search button");
+const cityName = document.querySelector(".city_selected");
+const countryName = document.querySelector(".country_selected");
+const flagImg = document.querySelector(".flag");
+
+let countryCodeMap = {};
+
+fetch("./country_code.json")
+  .then(response => response.json())
+  .then(data => {
+    countryCodeMap = data;
+  })
+  .catch(error => {
+    console.error("Error loading country codes:", error);
+  });
+
+function getCountryCode(name) {
+  if (!name) return null;
+
+  if (countryCodeMap[name]) return countryCodeMap[name].toUpperCase();
+
+  const lower = name.toLowerCase();
+  for (const [key, code] of Object.entries(countryCodeMap)) {
+    if (key.toLowerCase() === lower) return code.toUpperCase();
+  }
+
+  return null;
+}
+
+searchButton.addEventListener("click", () => {
+  const content = searchInput.value.trim();
+  if (!content) return;
+
+  fetch("https://nominatim.openstreetmap.org/search?format=jsonv2&q=" + encodeURIComponent(content))
+    .then(response => response.json())
+    .then(data => {
+      if (!data || data.length === 0) {
+        cityName.textContent = "City Not Found";
+        countryName.textContent = "";
+        if (flagImg) flagImg.src = "";
+        return;
+      }
+
+      const place = data[0];
+
+      let detectedCountry =
+        place.address?.country ||
+        place.display_name.split(",").pop().trim();
+
+      const city = place.display_name.split(",")[0].trim() || "Unknown Location";
+      cityName.textContent = `${city}, ${detectedCountry}`
+
+      let countryCode = getCountryCode(detectedCountry);
+
+      if (countryCode && flagImg) {
+        flagImg.src = `https://flagsapi.com/${countryCode}/flat/64.png`;
+        flagImg.alt = `Flag of ${detectedCountry}`;
+      } else if (flagImg) {
+        flagImg.src = "";
+      }
+    })
+    .catch(error => {
+      console.error("Error fetching location data:", error);
+      cityName.textContent = "Nothing found";
+      countryName.textContent = "";
+      if (flagImg) flagImg.src = "";
+    });
+});
